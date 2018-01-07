@@ -10,7 +10,10 @@
     <http auto-config="true">
         <form-login />
         <logout invalidate-session="true" />
+        <intercept-url pattern="/rest/**"
+            access="hasAnyRole('ROLE_SELLER')" />
     </http>
+    
     
     <beans:bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">

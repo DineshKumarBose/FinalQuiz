@@ -16,10 +16,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Path("/message")
 public class JerseyService {
-	  
+	
 	@GET
-	@PreAuthorize("hasAnyRole('ROLE_BUYER','ROLE_SELLER')")
     @Produces({MediaType.APPLICATION_JSON})
+	@PreAuthorize("hasRole('ROLE_SELLER')")
     public String getJSON() {
 		JSONObject test = new JSONObject();
         test.put("name", "kumar");
